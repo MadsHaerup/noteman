@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import {SaveIcon} from '@heroicons/react/solid';
+import Link from 'next/link';
 
 const CreateNote = ({title, content, date,}) => {
 
@@ -35,6 +36,10 @@ const CreateNote = ({title, content, date,}) => {
 }
   
   return (
+    <>
+    <Link href="/">
+    <a className="grid justify-items-center underline text-purple-600 font-semibold"> Go back</a>
+    </Link>
   <form className="grid my-6 place-self-center h-80 border-green-400 border-2 border-opacity-25 rounded-md bg-green-300 max-w-sm mx-auto">
      <input type="file" />
     <SaveIcon  onClick={()=> onSubmit()} className="h-8 w-8 text-blue-500 grid place-self-end"/>
@@ -54,6 +59,7 @@ const CreateNote = ({title, content, date,}) => {
         </textarea>
         <span className="text-purple-600 ">Created: {date}</span>
     </form>
+    </>
   )
 }
 
